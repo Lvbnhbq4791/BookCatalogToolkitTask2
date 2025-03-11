@@ -16,8 +16,11 @@ public class Book {
     }
 
     public boolean matches(String word) {
-        String bookDescription = title + " " + author.name + " " + author.surname;
-        return bookDescription.contains(word);
+        if (title.contains(word)) {
+            return true;
+        } else if (author.name.contains(word)) {
+            return true;
+        } else return author.surname.contains(word);
     }
 
     public int estimatePrice() {
